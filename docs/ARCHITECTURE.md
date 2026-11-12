@@ -51,8 +51,8 @@ it belongs in the service instead.
 
 The wrapper resolves the service base URL from `MARINE_KNOWLEDGE_SERVICE_URL`,
 falling back to `http://127.0.0.1:8000` for local development. In production this
-is set to the service's **internal** ALB URL by the `mcp-aws-infra` ECS task
-definition (sourced from the service Terraform's `service_internal_url` output).
+is set to `http://cmk-service:8000` — the service's ECS Service Connect alias —
+by the `mcp-aws-infra` ECS task definition (sourced from the service Terraform's `service_internal_url` output).
 
 ```
 MARINE_KNOWLEDGE_SERVICE_URL   (this wrapper, env var)
